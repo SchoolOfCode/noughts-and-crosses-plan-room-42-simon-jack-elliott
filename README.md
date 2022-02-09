@@ -1,113 +1,46 @@
-# Thinking in React Recap
+# Getting Started with Create React App
 
-## Noughts and Crosses
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-### Remind me about Computational Thinking
+## Available Scripts
 
-- Understand the problem
-- Break things down into sub-problems
-- Look for patterns and generalise
-- Make a model of the real world
-- Write an algorithm
-- Translate into code
+In the project directory, you can run:
 
-### Play some games of noughts and crosses
+### `npm start`
 
-Find an [online version for them to play](https://playtictactoe.org/), or just a [collaborative drawing app like Zoom Whiteboard](https://blog.zoom.us/zoom-whiteboard/)
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### Play another, write down everything that happens step by step
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-- Draw a 3x3 grid of squares
-- Pick a player to go first
-- Pick a value (X)
-- Pick a square
-  - if the square is not empty, you can't pick it
-  - if the square is empty, you can pick it
-- Check if someone has won
-  - if someone won, the game ends and they are declared the winner
-- Next player
-- Pick a value (O)
-- Pick a square
-  - if the square is not empty, you can't pick it
-  - if the square is empty, you can pick it
-- Check if someone has won
-- Next player (X)
-- ...
-- Someone won, game ends
+### `npm test`
 
-### Look for patterns in these steps
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Player Move:
-- Pick a square
-  - if the square is not empty, you can't pick it
-  - if the square is empty, you can pick it
-- Check if someone has won
-  - if someone won, the game ends and they are declared the winner
-- Next player
+### `npm run build`
 
-### Model to represent the aspects we need
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-- Players - X or O
-- Board - `[]`, `[[]]`, `string`, `number` if you really wanted (each number represents a possible board state)
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-\*There are 9 positions and an alphabet with 3 letters (X, O, empty). Total number of possible combinations is 3^9 = 19683. There are 5477 possible legal game states.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### Plan -> Algorithm
+### `npm run eject`
 
-- Draw a 3x3 grid of squares
-- First player is X
-- Player Move:
-- Choose a square  
-  - if the square is not empty, you can't pick it
-  - if the square is empty, you can pick it - put the player symbol in that square
-- Check if someone has won
-  - how?
-  - if they won, game over
-  - if not, next player move
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-### Remind me about Thinking in React
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-State, behaviour, dependencies, show -> State, functions, props, render
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-### React Plan
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-Wireframe. View parts. Behaviour parts.
+## Learn More
 
-|   |   |   |
-|---|---|---|
-|   |   |   |
-|   |   |   |
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-`Your turn: X`
-
-___
-
-Goes to these components:
-
-- Game
-  - State
-    - `board = [null,null,null,null,null,null,null,null,null] <- "X", "O", or null`
-    - `x's turn = true | false`
-  - Behaviour
-    - make a move
-      - if the square is not empty, you can't pick it
-      - if the square is empty, you can pick it - put the player symbol in that square
-    - check winner
-      - check if there's matching symbols in rows, columns, or diagonals
-      - if there is, the game ends and the symbol wins
-      - if the board is full, the game ends as a draw
-  - Render
-    - Board
-    - Who's turn is it?
-    - Winner
-- Board
-  - Props
-    - board
-    - make a move
-  - Render
-    - Squares - 1 for each item in board, arranged into a grid
-- Square
-  - Props
-    - make a move
-  - Render
-    - `"", X, or O`
+To learn React, check out the [React documentation](https://reactjs.org/).
