@@ -1,22 +1,30 @@
 import React from "react";
+import { Board } from "../Game";
 import Square from "../Square";
-import "./styles.css";
+import "./styles.scss";
 
-type Board = ('o' | 'x' | null)[];
-type eachSquare = ('o' | 'x' | null)
+interface Props {
+  board: Board;
+  makeAMove: (squareIndex: number) => void;
+}
 
-function BoardComponent({board, makeAMove} : {board: Board, makeAMove: (squareIndex: number)=> void}) {
+function BoardComponent(props: Props) {
+  const { board, makeAMove } = props;
 
-  return( 
-    <div>
-    {board.map((each:eachSquare )=> {
-      return <Square makeAMove={makeAMove}  />;
-    }) }
+  return (
+    <div className="board">
+      {board.map((square, index) => {
+        return (
+          <Square
+            key={index}
+            makeAMove={makeAMove}
+            index={index}
+            value={square}
+          />
+        );
+      })}
     </div>
-
-  )
-  
-  
+  );
 }
 
 export default BoardComponent;

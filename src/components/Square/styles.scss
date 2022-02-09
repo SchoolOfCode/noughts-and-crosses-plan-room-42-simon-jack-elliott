@@ -1,0 +1,54 @@
+.button {
+  display: block;
+  width: 10rem;
+  height: 10rem;
+  font-size: 8rem;
+  font-weight: 500;
+  padding-bottom: 0.75rem;
+  color: white;
+  text-transform: uppercase;
+  background: transparent;
+  cursor: pointer;
+  border-style: none;
+  border-width: 0.25rem;
+  border-color: white;
+  &:first-child {
+    border-bottom-style: solid;
+    border-right-style: solid;
+  }
+  &:nth-child(2) {
+    border-bottom-style: solid;
+  }
+  &:nth-child(3) {
+    border-bottom-style: solid;
+    border-left-style: solid;
+  }
+  &:nth-child(4) {
+    border-right-style: solid;
+  }
+  &:nth-child(6) {
+    border-left-style: solid;
+  }
+  &:nth-child(7) {
+    border-top-style: solid;
+    border-right-style: solid;
+  }
+  &:nth-child(8) {
+    border-top-style: solid;
+  }
+  &:nth-child(9) {
+    border-top-style: solid;
+    border-left-style: solid;
+  }
+}
+
+.value {
+  display: block;
+  transform: scale(0);
+  opacity: 0;
+  transition: cubic-bezier(0.5, 1.8, 0.1, 1.1) all 350ms;
+  &.animate {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
